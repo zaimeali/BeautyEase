@@ -1,25 +1,38 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
 
-export default function Boxes({ title, distance, logo }) {
+export default function Boxes({ title, distance, image, layout, orgPrice, disPrice }) {
     return (
         <View style={ styles.boxesView }>
             <View style={ styles.imageView }>
                 <Image 
-                    style={ styles.logoImage }
-                    source={ logo }
+                    style={ layout === "lg" ? styles.logoImageLg : styles.logoImageSm }
+                    source={ image }
                 />
             </View>
-            <Text>{ title }</Text>
-            <Text>{ distance }</Text>
+            <Text style={ styles.titleText }>{ title }</Text>
+            { distance && <Text style={ styles.distanceText }>{ distance }</Text> }
+            {
+                orgPrice && (
+                    <View style={ styles.disOrgPrice }>
+                        { orgPrice && <Text style={ [styles.priceStyle, styles.original] }>{ orgPrice }</Text> } 
+                        { disPrice && <Text style={ [styles.priceStyle, styles.discount] }>{ disPrice }</Text> }
+                    </View>
+                )
+            }
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    logoImage: {
+    logoImageLg: {
         width: 120,
         height: 120,
+        borderRadius: 10,
+    },
+    logoImageSm: {
+        width: 100,
+        height: 100,
         borderRadius: 10,
     },
     imageView: {
@@ -27,6 +40,34 @@ const styles = StyleSheet.create({
         elevation: 15,
     },
     boxesView: {
-        marginHorizontal: 5,
-    }
+        marginRight: 10,
+        paddingRight: 5,
+    },
+    titleText: {
+        fontSize: 15,
+        color: "#707070",
+        fontWeight: "600",
+        marginTop: 5,
+    },
+    distanceText: {
+        fontSize: 13,
+        color: "#707070",
+        opacity: 0.75,
+    },
+    disOrgPrice: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 5,
+    },  
+    priceStyle: {
+        fontSize: 11,
+    },
+    discount: {
+        color: "#00A80C",
+    },
+    original: {
+        color: '#FF0909',
+        textDecorationLine: "line-through",
+    },
 })
