@@ -1,9 +1,11 @@
 import React from 'react';
-import HomeScreen from './src/HomeScreen';
+
+// Navigation
+import Navigation from './src/Navigation';
 
 const App: () => React$Node = () => {
   return (
-    <HomeScreen />
+    <Navigation />
   );
 };
 export default App;
