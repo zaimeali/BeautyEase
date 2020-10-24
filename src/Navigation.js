@@ -6,6 +6,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import HomeScreen from './screen/HomeScreen';
 import ServicesScreen from './screen/ServicesScreen';
 import BookAppointment from './screen/BookAppointment';
+import ChooseDate from './screen/ChooseDate';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,9 +23,13 @@ export default function Navigation() {
                     component={ ServicesScreen }
                 />
                 <Drawer.Screen 
-                name="Book Appointment" 
-                component={ BookAppointment }
-            />
+                    name="Book Appointment" 
+                    component={ BookAppointment }
+                />
+                <Drawer.Screen 
+                    name="Choose Date" 
+                    component={ ChooseDate }
+                />
             </Drawer.Navigator>
         </NavigationContainer>
     )
