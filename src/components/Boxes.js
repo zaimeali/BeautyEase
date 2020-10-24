@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 
 export default function Boxes({ title, distance, image, layout, orgPrice, disPrice }) {
     return (
-        <View style={ styles.boxesView }>
+        <TouchableOpacity activeOpacity={ 0.5 } style={ styles.boxesView }>
             <View style={ styles.imageView }>
                 <Image 
                     style={ layout === "lg" ? styles.logoImageLg : styles.logoImageSm }
@@ -20,7 +20,7 @@ export default function Boxes({ title, distance, image, layout, orgPrice, disPri
                     </View>
                 )
             }
-        </View>
+        </TouchableOpacity>
     )
 }
 

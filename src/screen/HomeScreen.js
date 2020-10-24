@@ -1,24 +1,8 @@
 import React from 'react'
-import { StyleSheet, Text, View, Dimensions, SafeAreaView, ScrollView } from 'react-native'
-import { TextInput } from 'react-native-gesture-handler'
+import { StyleSheet, Text, View, Dimensions, SafeAreaView, ScrollView, TextInput } from 'react-native'
 
 // Components
 import SectionItem from '../components/SectionItem';
-
-const DATA = [
-    {
-        title: "Nearby Salons",
-        data: ["Kashee's Beauty Salon", "Najla's Beauty Salon", "Rose Beauty Parlor"]
-    },
-    {
-        title: "Offers",
-        data: ["Back Massage", "Mani Pedi", "Bridal Makeup"]
-    },
-    {
-        title: "Popular Styles",
-        data: ["Smokey Eyes Makeup", "Glamour Makeup", "Bob Haircut"]
-    },
-];
 
 const NEARBY_SALONS = {
     title: "Nearby Salons",
@@ -83,19 +67,19 @@ const POPULAR_STYLES = {
     data: [
         {
             name: "Smokey Eyes",
-            img: require("./../../assets/logos/najlas_logo.jpeg"),
+            img: require("./../../assets/popular/smokeyEyes.jpg"),
         },
         {
             name: "Glamour Haircut",
-            img: require("./../../assets/logos/rose_logo.jpg"),
+            img: require("./../../assets/popular/glamourMakeup.jpg"),
         },
         {
             name: "Bob Haircut",
-            img: require("./../../assets/logos/kashees_logo.png"),
+            img: require("./../../assets/popular/BobHaircUt.jpg"),
         },
         {
-            name: "Saba Beauty\nSalon",
-            img: require("./../../assets/logos/saba_logo.jpg"),
+            name: "Party Makeup",
+            img: require("./../../assets/popular/partyMakeup.jpg"),
         },
     ],
 };
@@ -127,6 +111,7 @@ export default function HomeScreen() {
                     <TextInput 
                         style={ styles.input } 
                         placeholder="Search salons, services here..."
+                        placeholderTextColor="#AD9393"
                     />
                 </View>
                 <SectionItem data={ NEARBY_SALONS } />
@@ -159,11 +144,12 @@ const styles = StyleSheet.create({
     },  
     input: {
         height: 40, 
-        borderColor: 'gray',
+        borderColor: '#DF608B',
         borderWidth: 1,
         borderRadius: 20,
         width: windowWidth * 0.85,
         paddingHorizontal: 20,
+        opacity: 0.8,
     },
     sectionHeader: {
         fontSize: 26,
