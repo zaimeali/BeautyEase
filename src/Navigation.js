@@ -1,24 +1,26 @@
 import { NavigationContainer } from '@react-navigation/native'
 import React from 'react'
-import { createStackNavigator } from '@react-navigation/stack'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
 // Screens
 import HomeScreen from './screen/HomeScreen';
+import ServicesScreen from './screen/ServicesScreen';
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen 
+            <Drawer.Navigator initialRouteName="Home">
+                <Drawer.Screen 
                     name="Home" 
-                    component={ HomeScreen } 
-                    options={{
-                        headerShown: false,
-                    }}
+                    component={ HomeScreen }
                 />
-            </Stack.Navigator>
+                <Drawer.Screen 
+                    name="Service" 
+                    component={ ServicesScreen }
+                />
+            </Drawer.Navigator>
         </NavigationContainer>
     )
 }

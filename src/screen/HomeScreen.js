@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, Dimensions, SafeAreaView, ScrollView, TextInput } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
 
 // Components
 import SectionItem from '../components/SectionItem';
@@ -104,8 +105,11 @@ export default function HomeScreen() {
     return (
         <SafeAreaView style={ styles.container }>
             <ScrollView>
-                <View style={ styles.header }>
-                    <Text>Beauty Ease</Text>
+                <View>
+                <LinearGradient colors={['#DA1C5C','#C01B79']} style={ styles.header }>
+                <Text style={ styles.headText }>Beauty Ease</Text>
+                </LinearGradient>
+                    
                 </View>
                 <View style={ styles.searchField }>
                     <TextInput 
@@ -153,5 +157,11 @@ const styles = StyleSheet.create({
     },
     sectionHeader: {
         fontSize: 26,
-    }
+    },
+    headText:{
+        alignSelf:'center',
+        fontSize: 25,
+        color:'white',
+        marginVertical: 30
+    },
 })
