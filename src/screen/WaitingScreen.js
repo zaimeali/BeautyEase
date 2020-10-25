@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity, ImageBackground, FlatList } from 'react-native'
-import Avatar from '../components/Avatar';
-import SlotButton from '../components/SlotButton';
+import CountDown from 'react-native-countdown-component';
 // import LinearGradient from 'react-native-linear-gradient'
 
 export default function Queue() {
@@ -40,6 +39,18 @@ export default function Queue() {
                         <View style={ styles.token }>
                         <Text style={ styles.tokenNum}>03</Text>
                         </View>
+                    </View>
+                    <View>
+                    <Text style={ styles.dateHeadText }>Waiting Time</Text>
+                        
+                        <Text style={ styles.timer}>
+                        <CountDown
+                        until={30}
+                        onFinish={() => alert('Your Waiting Time is Over')}
+                        size={20}
+                        digitStyle={{backgroundColor:"white"}}
+                        digitTxtStyle={{color:"#EA155D"}}
+                      /></Text>
                     </View>
                     </View>
                 </View>
@@ -135,12 +146,19 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:"#EA155D",
         alignSelf:'center',
-        marginVertical:8
+        marginVertical:8,
+        elevation: 15,
     },
     tokenNum: {
         alignSelf:'center',
         paddingVertical:20,
         fontSize:70,
         color:'white'
+    },
+    timer: {
+        fontSize: 30,
+        alignSelf:'center',
+
     }
+
 })
