@@ -5,10 +5,6 @@ import CountDown from 'react-native-countdown-component';
 
 export default function Queue() {
 
- 
-
-    
-
     const [selectedAvatar, setSelectedAvatar] = useState();
 
     const image = require('./../../assets/bgImage.png');

@@ -1,5 +1,9 @@
 package com.beautyease;
 
+import com.smixx.reactnativeicons.ReactNativeIcons;
+import java.util.Arrays;
+import com.smixx.reactnativeicons.IconFont;
+
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
