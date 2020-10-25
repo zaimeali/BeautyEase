@@ -56,7 +56,7 @@ export default function Queue() {
                 </View>
                 <View style={ styles.buttonView }>
                     <TouchableOpacity activeOpacity={ 0.5 } style={ styles.confirmButton }>
-                        <Text style={ styles.appointmentButton }>Get Token</Text>
+                        <Text style={ styles.appointmentButton }>Cancel</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
         borderWidth:1,
         borderColor:"#EA155D",
         alignSelf:'center',
-        marginVertical:8,
+        marginVertical:6,
         elevation: 15,
     },
     tokenNum: {
