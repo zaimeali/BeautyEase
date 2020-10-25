@@ -4,7 +4,7 @@ import Avatar from '../components/Avatar';
 import SlotButton from '../components/SlotButton';
 // import LinearGradient from 'react-native-linear-gradient'
 
-export default function BookAppointment() {
+export default function BookNow() {
 
     const avatar = [
         {
@@ -25,80 +25,7 @@ export default function BookAppointment() {
         },
     ]
 
-    const availableSlot = [
-        {
-            "id": 1,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "10:00 AM",
-        },
-        {
-            "id": 2,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "11:00 AM",
-        },
-        {
-            "id": 3,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "11:30 AM",
-        },
-        {
-            "id": 4,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "12:30 PM",
-        },
-        {
-            "id": 5,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "01:00 PM",
-        },
-        {
-            "id": 6,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "03:00 PM",
-        },
-        {
-            "id": 7,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "03:30 PM",
-        },
-        {
-            "id": 8,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "04:00 PM",
-        },
-        {
-            "id": 9,
-            "isSelected": false,
-            "isDisabled": false,
-            "time": "04:30 PM",
-        },
-        {
-            "id": 10,
-            "isSelected": false,
-            "isDisabled": true,
-            "time": "05:30 PM",
-        },
-        {
-            "id": 11,
-            "isSelected": false,
-            "isDisabled": true,
-            "time": "06:00 PM",
-        },
-        {
-            "id": 12,
-            "isSelected": false,
-            "isDisabled": true,
-            "time": "06:30 PM",
-        },
-    ]
+    
 
     const [selectedAvatar, setSelectedAvatar] = useState();
 
@@ -117,18 +44,11 @@ export default function BookAppointment() {
                 style={ styles.image }
             >
                 <View style={ styles.headScreen }>
-                    <Text style={ styles.headText }>Book Appointment</Text>
+                    <Text style={ styles.headText }>Book Now</Text>
                 </View>
                 <View style={ styles.bookAppointment }>
                     <View style={ styles.sectionsAppointment }>
-                        <View>
-                            <Text style={ styles.dateHeadText }>Select Your Date</Text>
-                            <View style={ styles.selectDateButtonView }>
-                                <TouchableOpacity style={ styles.selectDateButton }>
-                                    <Text>{ `${day}-${month}-${year}` }</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
+
                         <View style={ [styles.anotherSection] }>
                             <Text style={ styles.dateHeadText }>Choose Your Specialist</Text>
                             <FlatList 
@@ -142,30 +62,17 @@ export default function BookAppointment() {
                                     />
                                 )}
                             />
+                            <Text>Available in 30 Minutes</Text>
                         </View>
-                        <View style={ [styles.anotherSection] }>
-                            <Text style={ styles.dateHeadText }>Available Slot</Text>
-                            <View style={ styles.appointmentSlotButton }>
-                                <FlatList 
-                                    numColumns={ 3 }
-                                    data={ availableSlot }
-                                    keyExtractor={ item => item.id }
-                                    renderItem={ (item) => (
-                                        <SlotButton 
-                                            key={ item.item.id } 
-                                            time={ item.item.time } 
-                                            isSelected={ item.item.isSelected } 
-                                            isDisabled={ item.item.isDisabled }
-                                        /> 
-                                    )}
-                                />
-                            </View>
+                        <View>
+                        <Text style={ styles.dateHeadText }>Queue</Text>
                         </View>
+ 
                     </View>
                 </View>
                 <View style={ styles.buttonView }>
                     <TouchableOpacity activeOpacity={ 0.5 } style={ styles.confirmButton }>
-                        <Text style={ styles.appointmentButton }>Confirm Appointment</Text>
+                        <Text style={ styles.appointmentButton }>Get Token</Text>
                     </TouchableOpacity>
                 </View>
             </ImageBackground>

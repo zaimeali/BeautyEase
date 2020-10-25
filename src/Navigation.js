@@ -7,6 +7,8 @@ import HomeScreen from './screen/HomeScreen';
 import ServicesScreen from './screen/ServicesScreen';
 import BookAppointment from './screen/BookAppointment';
 import ChooseDate from './screen/ChooseDate';
+import BookNow from './screen/BookNow';
+import Queue from './screen/WaitingScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -30,6 +32,14 @@ export default function Navigation() {
                     name="Choose Date" 
                     component={ ChooseDate }
                 />
+                <Drawer.Screen 
+                name="Book Now" 
+                component={ BookNow }
+            />
+            <Drawer.Screen 
+            name="Queue" 
+            component={ Queue }
+        />
             </Drawer.Navigator>
         </NavigationContainer>
     )
