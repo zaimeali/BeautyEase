@@ -4,7 +4,7 @@ import Avatar from '../components/Avatar';
 import SlotButton from '../components/SlotButton';
 // import LinearGradient from 'react-native-linear-gradient'
 
-export default function BookNow() {
+export default function BookNow(props) {
 
     const avatar = [
         {
@@ -71,7 +71,7 @@ export default function BookNow() {
                     </View>
                 </View>
                 <View style={ styles.buttonView }>
-                    <TouchableOpacity activeOpacity={ 0.5 } style={ styles.confirmButton }>
+                    <TouchableOpacity onPress={ () => props.navigation.navigate('Queue') } activeOpacity={ 0.5 } style={ styles.confirmButton }>
                         <Text style={ styles.appointmentButton }>Get Token</Text>
                     </TouchableOpacity>
                 </View>

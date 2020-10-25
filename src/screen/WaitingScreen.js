@@ -3,7 +3,7 @@ import { View, Text, SafeAreaView, StyleSheet, Dimensions, TouchableOpacity, Ima
 import CountDown from 'react-native-countdown-component';
 // import LinearGradient from 'react-native-linear-gradient'
 
-export default function Queue() {
+export default function Queue(props) {
 
     const [selectedAvatar, setSelectedAvatar] = useState();
 
@@ -51,7 +51,7 @@ export default function Queue() {
                     </View>
                 </View>
                 <View style={ styles.buttonView }>
-                    <TouchableOpacity activeOpacity={ 0.5 } style={ styles.confirmButton }>
+                    <TouchableOpacity onPress={ () => props.navigation.navigate('Book Now') } activeOpacity={ 0.5 } style={ styles.confirmButton }>
                         <Text style={ styles.appointmentButton }>Cancel</Text>
                     </TouchableOpacity>
                 </View>
