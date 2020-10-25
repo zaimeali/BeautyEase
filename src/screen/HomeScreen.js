@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, View, Dimensions, SafeAreaView, ScrollView, TextInput } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -102,6 +102,7 @@ export function HR() {
 }
 
 export default function HomeScreen() {
+
     return (
         <SafeAreaView style={ styles.container }>
             <ScrollView>

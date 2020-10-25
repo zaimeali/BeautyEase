@@ -5,6 +5,7 @@ import CountDown from 'react-native-countdown-component';
 
 export default function Queue(props) {
 
+    const tokenNumber = props.route.params.token;
     const [selectedAvatar, setSelectedAvatar] = useState();
 
     const image = require('./../../assets/bgImage.png');
@@ -33,7 +34,7 @@ export default function Queue(props) {
                     <View>
                     <Text style={ styles.dateHeadText }>Token Number</Text>
                         <View style={ styles.token }>
-                        <Text style={ styles.tokenNum}>03</Text>
+                        <Text style={ styles.tokenNum}>{ tokenNumber }</Text>
                         </View>
                     </View>
                     <View>

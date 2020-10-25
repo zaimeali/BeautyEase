@@ -29,6 +29,8 @@ export default function BookNow(props) {
 
     const [selectedAvatar, setSelectedAvatar] = useState();
 
+    const [tokenNumber, setTokenNumber] = useState(0)
+
     const image = require('./../../assets/bgImage.png');
     const date = new Date();
     const year = date.getFullYear();
@@ -71,7 +73,13 @@ export default function BookNow(props) {
                     </View>
                 </View>
                 <View style={ styles.buttonView }>
-                    <TouchableOpacity onPress={ () => props.navigation.navigate('Queue') } activeOpacity={ 0.5 } style={ styles.confirmButton }>
+                    <TouchableOpacity onPress={ () => {
+                        setTokenNumber(tokenNumber + 1)
+                        console.warn(tokenNumber)
+                        // props.navigation.navigate('Queue', {
+                        //     token: tokenNumber
+                        // })
+                    } } activeOpacity={ 0.5 } style={ styles.confirmButton }>
                         <Text style={ styles.appointmentButton }>Get Token</Text>
                     </TouchableOpacity>
                 </View>
